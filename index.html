@@ -19,23 +19,20 @@
     <!-- Füge hier den restlichen Inhalt deiner Seite ein -->
   </div>
 
-  <script>
-    // Verwende das Fetch API, um die menu.html-Datei zu laden
-    fetch('menu.html')
-      .then(response => response.text())
-      .then(data => {
-        // Füge den geladenen HTML-Code in das menu-container-Div ein
-        document.getElementById('menu-container').innerHTML = data;
-  $('.dropdown-submenu a.test').on("click", function(e){
-    $(this).next('ul').toggle();
-    e.stopPropagation();
-    e.preventDefault();
-  });
-};
-      
-        
-      })
-      .catch(error => console.error('Fehler beim Laden der Datei:', error));
-  </script>
+<script>
+  fetch('menu.html')
+  .then(response => response.text())
+  .then(data => {
+    document.getElementById('menu-container').innerHTML = data;
+    $('.dropdown-submenu a.test').on("click", function(e){
+      $(this).next('ul').toggle();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+  })
+  .catch(error => console.error('Fehler beim Laden der Datei:', error));
+</script>
+
+
 </body>
 </html>
