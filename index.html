@@ -34,6 +34,12 @@
       })
       .then(data => {
         $('#menuContainer').html(data);
+        // Hier fügen wir das Skript zum Öffnen der Dropdown-Untermenüs hinzu
+        $('.dropdown-submenu').on("click", function(e){
+          $(this).children('.dropdown-menu').toggle();
+          e.stopPropagation();
+          e.preventDefault();
+        });
       })
       .catch(error => console.error(error));
   });
