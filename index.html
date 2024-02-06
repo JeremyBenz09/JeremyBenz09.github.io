@@ -34,12 +34,6 @@
       })
       .then(data => {
         $('#menuContainer').html(data);
-        // Hier verwenden wir Event-Delegation, um sicherzustellen, dass das Event-Handling auch für dynamisch hinzugefügte Elemente funktioniert
-        $('#menuContainer').on("click", '.dropdown-submenu a', function(e){
-          $(this).next('ul').toggle();
-          e.stopPropagation();
-          e.preventDefault();
-        });
       })
       .catch(error => console.error(error));
   });
